@@ -7,7 +7,9 @@ To Start your fax services, you should set your configuration to receive faxes. 
 ## STEP 1:
 
 After installing FreeSWITCH, start with Configuration of mod_spandsp.
+
 `${CONF}/autoload_configs/spandsp.conf.xml (You should not have to modify this file).`
+
 `${CONF}/autoload_configs/fax.conf.xml`
 
 ```xml
@@ -29,6 +31,7 @@ After installing FreeSWITCH, start with Configuration of mod_spandsp.
 and then you should configure Dialplan:
 
 `${CONF}/dialplan/public/90XXXXXXXXXX.xml`
+
 ```xml
 <extension name="fax_receive">
   <condition field="destination_number" expression="^90XXXXXXXXXX$">
@@ -48,7 +51,8 @@ and then you should configure Dialplan:
 Let's write some Python code to handle received faxes:
 
 process-rxfax.py
-This script based on (steffler.info)[http://steffler.info/wp-content/uploads/2009/06/process-rxfax.py]
+
+This script based on [steffler.info](http://steffler.info/wp-content/uploads/2009/06/process-rxfax.py)
 
 ```python
 #
