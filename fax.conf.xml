@@ -1,0 +1,11 @@
+<configuration name="fax.conf" description="FAX application configuration">
+    <settings>
+    <param name="use-ecm"       value="true"/>
+    <param name="verbose"       value="false"/> <!-- For debugging -->
+    <param name="disable-v17"   value="false"/>
+    <param name="ident"         value="My FAX IDENT"/> <!-- Fax IDENT -->
+    <param name="header"        value="My FAX HEADER"/> <!-- Fax HEADER -->
+    <param name="spool-dir"     value="/tmp"/> <!-- Répertoire de travail -->
+    <param name="file-prefix"   value="faxrx"/> <!-- Sera ajouté au début du nom du fichier -->
+    </settings>
+</configuration>
