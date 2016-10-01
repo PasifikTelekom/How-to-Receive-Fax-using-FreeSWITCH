@@ -1,6 +1,6 @@
 # How to Receive Fax using FreeSWITCH
 
-Receiving fax in FreeSWITCH is quite simple with mod_spandsp, but managing these faxes can be complex.
+Receiving fax in FreeSWITCH is quite simple with `mod_spandsp`, but managing these faxes can be complex.
 
 To Start your fax services, you should set your configuration to receive faxes. Once you will be done with this tutorial, you should have a nice system which will receive faxes and manage them simply
 
