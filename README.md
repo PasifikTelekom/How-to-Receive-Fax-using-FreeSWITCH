@@ -6,7 +6,7 @@ To Start your fax services, you should set your configuration to receive faxes. 
 
 ## STEP 1:
 
-After installing FreeSWITCH, start with Configuration of mod_spandsp.
+After installing FreeSWITCH, start with Configuration of `mod_spandsp`.
 
 `${CONF}/autoload_configs/spandsp.conf.xml (You should not have to modify this file).`
 
