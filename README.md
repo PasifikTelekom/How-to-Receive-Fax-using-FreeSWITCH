@@ -30,7 +30,7 @@ After installing FreeSWITCH, start with Configuration of mod_spandsp.
 
 and then you should configure Dialplan:
 
-`${CONF}/dialplan/public/90XXXXXXXXXX.xml`
+`${CONF}/dialplan/public/90XXXXXXXXXX.xml` or `${CONF}/dialplan/public/dialplan-public.xml`
 
 ```xml
 <extension name="fax_receive">
@@ -38,6 +38,9 @@ and then you should configure Dialplan:
     <action application="answer" />
     <action application="playback" data="silence_stream://2000"/>
     <action application="rxfax" data="/tmp/rxfax-${uuid}.tiff"/>
+    <action application="set" data="session_in_hangup_hook=true"/> <!-- Pass fax headers at hangup -->
+    <action application="set" data="api_hangup_hook=system ${base_dir}/scripts/process-fax.sh '\\\${fax_remote_station_id}' '\\\${fax_local_station_id}' '\\\${fax_document_transferred_pages}' '\\\${fax_document_total_pages}' '\\\${fax_result_text}' '${caller_id_number}' '${uuid}'"/> <!-- Script who receive fax headers at hangup-->
+    <action application="python" data="process-rxfax"/> <!-- Fax reception management script -->
     <action application="hangup"/>
     <action application="set" data="absolute_codec_string=PCMU,PCMA"/>
     <action application="set" data="fax_enable_t38=true"/>
